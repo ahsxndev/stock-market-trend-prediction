@@ -33,20 +33,11 @@ The goal is to compare the performance of each model in predicting stock closing
 ## Project Structure
 ```plaintext
 .
-├── data/
-│   └── Bajaj Stock Dataset.csv  # Stock price data
-├── models/
-│   ├── lstm.py             # LSTM model implementation
-│   ├── arima.py            # ARIMA model implementation
-│   ├── garch.py            # GARCH model implementation
-│   ├── ets.py              # ETS model implementation
-│   └── xgboost.py          # XGBoost model implementation
-├── notebooks/
-│   └── stock_prediction.ipynb  # Jupyter notebook for model training and evaluation
-├── requirements.txt        # Dependencies required to run the project
+├── main.ipynb              # Notebook for training and comparing models
+├── main.py                 # Legacy script (optional, can be removed)
 ├── README.md               # Project README file
-└── LICENSE                 # Project License
-
+├── LICENSE                 # Project License
+└── dataset/                # Kept only for local runs; not required in Colab
 ```
 
 ## Features
@@ -102,11 +93,14 @@ cd Stock-Market-Trend-Prediction-Using-Time-Series-Analysis
 3.	Install the required dependencies:
 pip install -r requirements.txt
 
-Make sure to have the Bajaj Stock Dataset.csv dataset in the data/ folder.
+The project now downloads the dataset directly from Kaggle in Colab. No local dataset folder is required.
 
 ## Data
 
-The dataset used is Bajaj Stock Dataset.csv, which contains the following columns:
+The dataset is sourced from Kaggle:
+https://www.kaggle.com/datasets/gianetan/bajaj-finance-limited-bajfinance
+
+The CSV contains the following columns:
 
 	•	Date: Date of stock trading.
 	•	Open: Opening price of the stock.
@@ -115,7 +109,7 @@ The dataset used is Bajaj Stock Dataset.csv, which contains the following column
 	•	Close: Closing price of the stock.
 	•	Volume: Number of stocks traded.
 
-Ensure that the dataset is placed in the data/ directory.
+In Colab, the notebook automatically downloads and extracts the dataset after you upload your Kaggle API key (kaggle.json).
 
 ## Usage
 
